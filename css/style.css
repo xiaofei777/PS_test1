@@ -28,22 +28,27 @@ body {
 }
 
 .header-top {
-  display: flex;
+  display:flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
   height: 30px;
   background-color: #222;
   color: #ccc;
   font-size: 12px;
   padding: 0 20px;
+  z-index: 200;
 }
 
 .header-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .logo {
@@ -75,15 +80,19 @@ body {
   border-radius: 4px 0 0 4px;
   width: 200px;
   font-size: 14px;
+  background-color: #eee;
+  border-right: 0;
 }
 
 .search-btn {
   background-color: #eee;
   border: none;
-  padding: 8px 12px;
+  padding: 5px 12px;
   cursor: pointer;
   border-radius: 0 4px 4px 0;
   width: 40px;
+  border: 1px solid #ddd;
+  border-left: 0;
 }
 
 .nav {
@@ -122,7 +131,16 @@ body {
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 15px;
+  padding-block-end: 0;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card{
+  display: flex ;
+  flex-direction: column;
+  border: 1px solid #f3f0f0;
+  margin-bottom: 20px;
+  padding:10px;
 }
 
 .card-header {
@@ -209,8 +227,8 @@ body {
 }
 
 .thumb-list img {
-  width: 80px;
-  height: 60px;
+  width: 32%;
+  height: 100%;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -222,8 +240,8 @@ body {
 .list-item {
   display: flex;
   gap: 8px;
-  margin-bottom: 10px;
-  font-size: 14px;
+  margin-bottom: 25px;
+  font-size: 13px;
 }
 
 .list-item .label {
@@ -249,17 +267,18 @@ body {
 }
 
 .image-list img {
-  width: 150px;
+  width: 50%;
   height: 100px;
   object-fit: cover;
   border-radius: 6px;
+  /* position:relative; */
 }
 
 .hot-list li {
   display: flex;
   justify-content: space-between;
-  padding: 5px 0;
-  font-size: 14px;
+  padding: 2px 0;
+  font-size: 13px;
   color: #666;
 }
 
@@ -316,7 +335,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   font-size: 14px;
   color: #666;
 }
@@ -337,7 +356,9 @@ body {
 
 .game-news-item {
   margin-bottom: 20px;
-  padding-bottom: 15px;
+  /*元素的外边距
+  /* padding-bottom: 15px; */
+  /*元素的内边距 */
   border-bottom: 1px solid #eee;
 }
 
@@ -386,9 +407,10 @@ body {
 }
 
 .recommend-list .item {
+  flex-direction: column;
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  /* gap: 10px; */
   margin-bottom: 15px;
 }
 
@@ -406,10 +428,14 @@ body {
 }
 
 .icon-arrow {
+  background-color: #ccc;
   width: 20px;
   height: 20px;
-  color: #ccc;
+  color: #ffffff;
   margin-top: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .recommend-list a {
